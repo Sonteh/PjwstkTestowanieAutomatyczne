@@ -11,7 +11,7 @@ public class LolCalculator {
         new LolCalculator().LoLCalculator(sc.nextInt(),sc.nextInt());
     }
 
-    public void LoLCalculator(int minuteInGame, int goldNeed){
+    public int LoLCalculator(int minuteInGame, int goldNeed){
         System.out.println("Minute " + minuteInGame);
         System.out.println("Gold " + goldNeed);
 
@@ -20,6 +20,7 @@ public class LolCalculator {
 
         if(minuteInGame < 0 || goldNeed < 0) {
             System.out.println("Enter correct numbers");
+            return -1;
         }
         else{
             int numberOfMelee = goldNeed / meleeMinion;
@@ -30,9 +31,13 @@ public class LolCalculator {
             if(meleeMinionChange != 0 || casterMionionChange != 0){
                 System.out.println("You need to kill " + (numberOfMelee + 1) + " fighter Minions or "
                         + (numberOfCaster + 1) + " caster Minions to get at least " + goldNeed + "\n");
+                int wavesWithoutSiege = (numberOfMelee + 1)/3;
+                System.out.println("Without siege waves: " + wavesWithoutSiege + "\n");
             } else {
                 System.out.println("You need to kill " + numberOfMelee + " fighter Minions or "
                         + numberOfCaster + " caster Minions to get at least " + goldNeed + "\n");
+                int wavesWithoutSiege = (numberOfMelee + 1)/3;
+                System.out.println("Without siege waves: " + wavesWithoutSiege + "\n");
             }
 
             if(minuteInGame < 15) {
@@ -42,11 +47,12 @@ public class LolCalculator {
                 System.out.println("Gold per wave (3 melee Minions, 3 caster Minions and 1 siege Minion every 3 waves) - " +
                         goldPerWave + " gold");
 
-
                 if(goldPerWave % goldNeed == 0) {
                     System.out.println("You need to kill " + howManyWaves + " to get at least " + goldNeed);
+                    return howManyWaves;
                 } else {
                     System.out.println("You need to kill " + (howManyWaves + 1) + " to get at least " + goldNeed);
+                    return  (howManyWaves+1);
                 }
             }
             else if(minuteInGame <= 17) {
@@ -58,8 +64,10 @@ public class LolCalculator {
 
                 if(goldPerWave % goldNeed == 0) {
                     System.out.println("You need to kill " + howManyWaves + " to get at least " + goldNeed);
+                    return howManyWaves;
                 } else {
                     System.out.println("You need to kill " + (howManyWaves + 1) + " to get at least " + goldNeed);
+                    return (howManyWaves+1);
                 }
             }
             else if(minuteInGame < 25) {
@@ -71,8 +79,10 @@ public class LolCalculator {
 
                 if(goldPerWave % goldNeed == 0) {
                     System.out.println("You need to kill " + howManyWaves + " to get at least " + goldNeed);
+                    return howManyWaves;
                 } else {
                     System.out.println("You need to kill " + (howManyWaves + 1) + " to get at least " + goldNeed);
+                    return (howManyWaves+1);
                 }
             }
             else if(minuteInGame > 25) {
@@ -84,10 +94,13 @@ public class LolCalculator {
 
                 if(goldPerWave % goldNeed == 0) {
                     System.out.println("You need to kill " + howManyWaves + " to get at least " + goldNeed);
+                    return howManyWaves;
                 } else {
                     System.out.println("You need to kill " + (howManyWaves + 1) + " to get at least " + goldNeed);
+                    return (howManyWaves+1);
                 }
             }
         }
+        return -1;
     }
 }

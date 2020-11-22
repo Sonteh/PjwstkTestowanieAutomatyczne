@@ -30,14 +30,15 @@ public class LolCalculatorTest {
     @Test
     public void testLolCalculator2() {
         int result = lolCalculator.LoLCalculator(20,1000);
-        assertEquals(15,result);
+        assertNotEquals(9,result);
 //        System.out.println("Test 2");
     }
 
     @Test
     public void testLolCalculator3() {
-        int result = lolCalculator.LoLCalculator(30,1000);
-        assertEquals(25,result);
+        int result = lolCalculator.LoLCalculator(15,1000);
+        int result2 = lolCalculator.LoLCalculator(15,2000);
+        assertNotSame(result,result2);
 //        System.out.println("Test 3");
     }
 }

@@ -48,10 +48,10 @@ public class LolCalculator {
                         goldPerWave + " gold");
 
                 if(goldPerWave % goldNeed == 0) {
-                    System.out.println("You need to kill " + howManyWaves + " to get at least " + goldNeed);
+                    System.out.println("You need to kill " + howManyWaves + " to get at least " + goldNeed + "\n");
                     return howManyWaves;
                 } else {
-                    System.out.println("You need to kill " + (howManyWaves + 1) + " to get at least " + goldNeed);
+                    System.out.println("You need to kill " + (howManyWaves + 1) + " to get at least " + goldNeed + "\n");
                     return  (howManyWaves+1);
                 }
             }
@@ -63,10 +63,10 @@ public class LolCalculator {
                         goldPerWave + " gold");
 
                 if(goldPerWave % goldNeed == 0) {
-                    System.out.println("You need to kill " + howManyWaves + " to get at least " + goldNeed);
+                    System.out.println("You need to kill " + howManyWaves + " to get at least " + goldNeed + "\n");
                     return howManyWaves;
                 } else {
-                    System.out.println("You need to kill " + (howManyWaves + 1) + " to get at least " + goldNeed);
+                    System.out.println("You need to kill " + (howManyWaves + 1) + " to get at least " + goldNeed + "\n");
                     return (howManyWaves+1);
                 }
             }
@@ -78,10 +78,10 @@ public class LolCalculator {
                         goldPerWave + " gold");
 
                 if(goldPerWave % goldNeed == 0) {
-                    System.out.println("You need to kill " + howManyWaves + " to get at least " + goldNeed);
+                    System.out.println("You need to kill " + howManyWaves + " to get at least " + goldNeed + "\n");
                     return howManyWaves;
                 } else {
-                    System.out.println("You need to kill " + (howManyWaves + 1) + " to get at least " + goldNeed);
+                    System.out.println("You need to kill " + (howManyWaves + 1) + " to get at least " + goldNeed + "\n");
                     return (howManyWaves+1);
                 }
             }
@@ -93,10 +93,10 @@ public class LolCalculator {
                         goldPerWave + " gold");
 
                 if(goldPerWave % goldNeed == 0) {
-                    System.out.println("You need to kill " + howManyWaves + " to get at least " + goldNeed);
+                    System.out.println("You need to kill " + howManyWaves + " to get at least " + goldNeed + "\n");
                     return howManyWaves;
                 } else {
-                    System.out.println("You need to kill " + (howManyWaves + 1) + " to get at least " + goldNeed);
+                    System.out.println("You need to kill " + (howManyWaves + 1) + " to get at least " + goldNeed + "\n");
                     return (howManyWaves+1);
                 }
             }

@@ -1,6 +1,6 @@
-package app;
+package pl.pjwstk.lab3;
 
-import app.LolCalculator;
+import pl.pjwstk.lab3.LolCalculator;
 import org.junit.*;
 
 import static org.junit.Assert.*;
@@ -23,14 +23,14 @@ public class LolCalculatorTest {
     @Test
     public void testLolCalculator() {
         int result = lolCalculator.LoLCalculator(10,1000);
-        assertEquals(9,result);
+        Assert.assertEquals(9,result);
 //        System.out.println("Test 1");
     }
 
     @Test
     public void testLolCalculator2() {
         int result = lolCalculator.LoLCalculator(20,1000);
-        assertNotEquals(9,result);
+        Assert.assertNotEquals(9,result);
 //        System.out.println("Test 2");
     }
 
@@ -38,7 +38,7 @@ public class LolCalculatorTest {
     public void testLolCalculator3() {
         int result = lolCalculator.LoLCalculator(15,1000);
         int result2 = lolCalculator.LoLCalculator(15,2000);
-        assertNotSame(result,result2);
+        Assert.assertNotSame(result,result2);
 //        System.out.println("Test 3");
     }
 }

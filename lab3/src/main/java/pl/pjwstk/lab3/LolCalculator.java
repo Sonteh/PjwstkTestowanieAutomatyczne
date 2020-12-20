@@ -9,6 +9,9 @@ public class LolCalculator {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter minute of game and next how much gold you need: ");
         new LolCalculator().LoLCalculator(sc.nextInt(),sc.nextInt());
+
+        System.out.println("Enter jungle clear type (FullClear, Top, Bot, None): ");
+        new LolCalculator().JungleCampGold(sc.next());
     }
 
     public int LoLCalculator(int minuteInGame, int goldNeed){
@@ -48,10 +51,10 @@ public class LolCalculator {
                         goldPerWave + " gold");
 
                 if(goldPerWave % goldNeed == 0) {
-                    System.out.println("You need to kill " + howManyWaves + " to get at least " + goldNeed + "\n");
+                    System.out.println("You need to kill " + howManyWaves + " waves to get at least " + goldNeed + "\n");
                     return howManyWaves;
                 } else {
-                    System.out.println("You need to kill " + (howManyWaves + 1) + " to get at least " + goldNeed + "\n");
+                    System.out.println("You need to kill " + (howManyWaves + 1) + " waves to get at least " + goldNeed + "\n");
                     return  (howManyWaves+1);
                 }
             }
@@ -63,10 +66,10 @@ public class LolCalculator {
                         goldPerWave + " gold");
 
                 if(goldPerWave % goldNeed == 0) {
-                    System.out.println("You need to kill " + howManyWaves + " to get at least " + goldNeed + "\n");
+                    System.out.println("You need to kill " + howManyWaves + " to waves get at least " + goldNeed + "\n");
                     return howManyWaves;
                 } else {
-                    System.out.println("You need to kill " + (howManyWaves + 1) + " to get at least " + goldNeed + "\n");
+                    System.out.println("You need to kill " + (howManyWaves + 1) + " waves to get at least " + goldNeed + "\n");
                     return (howManyWaves+1);
                 }
             }
@@ -78,10 +81,10 @@ public class LolCalculator {
                         goldPerWave + " gold");
 
                 if(goldPerWave % goldNeed == 0) {
-                    System.out.println("You need to kill " + howManyWaves + " to get at least " + goldNeed + "\n");
+                    System.out.println("You need to kill " + howManyWaves + " waves to get at least " + goldNeed + "\n");
                     return howManyWaves;
                 } else {
-                    System.out.println("You need to kill " + (howManyWaves + 1) + " to get at least " + goldNeed + "\n");
+                    System.out.println("You need to kill " + (howManyWaves + 1) + " waves to get at least " + goldNeed + "\n");
                     return (howManyWaves+1);
                 }
             }
@@ -93,14 +96,53 @@ public class LolCalculator {
                         goldPerWave + " gold");
 
                 if(goldPerWave % goldNeed == 0) {
-                    System.out.println("You need to kill " + howManyWaves + " to get at least " + goldNeed + "\n");
+                    System.out.println("You need to kill " + howManyWaves + " waves to get at least " + goldNeed + "\n");
                     return howManyWaves;
                 } else {
-                    System.out.println("You need to kill " + (howManyWaves + 1) + " to get at least " + goldNeed + "\n");
+                    System.out.println("You need to kill " + (howManyWaves + 1) + " waves to get at least " + goldNeed + "\n");
                     return (howManyWaves+1);
                 }
             }
         }
         return -1;
+    }
+
+    public int JungleCampGold(String clearType) {
+        int raptorGold = 85;
+        int murkWolvesGold = 85;
+        int krugsGold = 135;
+        int grompGold = 105;
+        int blueGold = 100;
+        int redGold = 100;
+
+        switch (clearType) {
+            case "FullClear":
+                int fullClearGold = raptorGold + murkWolvesGold + krugsGold + grompGold + blueGold + redGold;
+                System.out.println("Doing full clear in jungle would give you: " + fullClearGold + " gold.\n");
+
+                return fullClearGold;
+
+            case "Top":
+                int topClearGold = murkWolvesGold + grompGold + blueGold;
+                System.out.println("Doing top clear in jungle would give you: " + topClearGold + " gold.\n");
+
+                return topClearGold;
+
+            case "Bot":
+                int botClearGold = raptorGold + krugsGold + redGold;
+                System.out.println("Doing bot clear in jungle would give you: " + botClearGold + " gold.\n");
+
+                return botClearGold;
+
+            case "None":
+                System.out.println("You are not clearing any jungle camps.\n");
+
+                return 0;
+
+            default:
+                System.out.println("Wrong selection");
+                return -1;
+        }
+
     }
 }

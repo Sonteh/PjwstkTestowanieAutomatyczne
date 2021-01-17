@@ -1,12 +1,46 @@
 package pl.pjwstk.lab3;
 
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 import pl.pjwstk.lab3.LolCalculator;
 import org.junit.*;
 
 import static org.junit.Assert.*;
+import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.when;
 
+@RunWith(MockitoJUnitRunner.class)
 public class LolCalculatorTest {
     private LolCalculator lolCalculator;
+
+    @InjectMocks
+    LolCalculatorApplication lolCalculatorApplication = new LolCalculatorApplication();
+
+    @Mock
+    LolCalculator lolService;
+
+    @Test
+    public void testLolCalculatorMock() {
+        when(lolService.LoLCalculator(10,1000)).thenReturn(9);
+
+        Assert.assertEquals(lolCalculatorApplication.lolcalculator(10,1000),9);
+    }
+
+    @Test
+    public void testLolCalculatorMock2() {
+        when(lolService.JungleCampGold("FullClear")).thenReturn(610);
+
+        Assert.assertEquals(lolCalculatorApplication.junglecampgold("FullClear"),610);
+    }
+
+    @Test
+    public void testLolCalculatorMock3() {
+        given(lolService.JungleCampGold("Top")).willReturn(290);
+
+        Assert.assertEquals(lolCalculatorApplication.junglecampgold("Top"),290);
+    }
 
     @Before
     public void setUp() {
